@@ -29,7 +29,7 @@ void PcLogin::service(HttpRequest &request, HttpResponse &response)
             QString token=QUuid::createUuid().toString();
             database->pclogintoken.insert(useid,token);
             QJsonObject resobj;
-            resobj.insert("mail",QJsonValue(usedata[1]));
+//            resobj.insert("mail",QJsonValue(usedata[1]));
             resobj.insert("token",QJsonValue(token));
             QJsonDocument resJD(resobj);
             QByteArray resbyte=resJD.toJson();

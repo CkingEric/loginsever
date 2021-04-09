@@ -17,6 +17,7 @@ public:
     QMap<QString,QString>phone_token_vericode;
     QMap<QString,QString>useid_phoneuuid;
     QMap<QString,QString>pctoken_uuid;
+    QMap<QString,QString>regitertoken_mailcode;
 
 
 private:

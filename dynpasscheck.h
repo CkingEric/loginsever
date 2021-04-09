@@ -8,6 +8,10 @@
 #include<QJsonArray>
 #include<QJsonValue>
 #include<QUuid>
+#include<QDateTime>
+#include<QTimer>
+#include <QCryptographicHash>
+
 #include"singletondata.h"
 #include "httprequesthandler.h"
 

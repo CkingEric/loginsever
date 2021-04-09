@@ -10,7 +10,10 @@ void RequestMapper::service(HttpRequest &request, HttpResponse &response)
     QByteArray path=request.getPath();
     qDebug("RequestMapper: path=%s",path.data());
 
-    if(path=="/PcLogin"){
+    if(path=="/"){
+        hello.service(request,response);
+    }
+    else if(path=="/PcLogin"){
         pclogin.service(request,response);
     }
     else if(path=="/Register"){

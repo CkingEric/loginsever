@@ -16,13 +16,17 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         dynpasscheck.cpp \
+        helloword.cpp \
         main.cpp \
         pclogin.cpp \
+        phonebindcheck.cpp \
         phonelogin.cpp \
         register.cpp \
         requestmapper.cpp \
+        singlestmp.cpp \
         singletondata.cpp \
-        stmpcheck.cpp
+        stmpcheck.cpp \
+        util.cpp
 
 DESTDIR += $$PWD/bin
 
@@ -32,9 +36,13 @@ OTHER_FILES += /etc/gamesever.ini
 
 HEADERS += \
     dynpasscheck.h \
+    helloword.h \
     pclogin.h \
+    phonebindcheck.h \
     phonelogin.h \
     register.h \
     requestmapper.h \
+    singlestmp.h \
     singletondata.h \
-    stmpcheck.h
+    stmpcheck.h \
+    util.h

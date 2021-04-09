@@ -9,6 +9,7 @@
 #include"phonelogin.h"
 #include"stmpcheck.h"
 #include"register.h"
+#include"helloword.h"
 
 
 class RequestMapper :public HttpRequestHandler
@@ -26,6 +27,7 @@ private:
      PhoneLogin phonelogin;
      StmpCheck stmpcheck;
      Register registers;
+     HelloWord hello;
 };
 
 #endif // REQUESTMAPPER_H
