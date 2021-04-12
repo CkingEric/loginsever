@@ -9,6 +9,7 @@
 #include"phonelogin.h"
 #include"stmpcheck.h"
 #include"register.h"
+#include "phonebindcheck.h"
 #include"helloword.h"
 
 
@@ -28,6 +29,7 @@ private:
      StmpCheck stmpcheck;
      Register registers;
      HelloWord hello;
+     Phonebindcheck bindcheck;
 };
 
 #endif // REQUESTMAPPER_H

@@ -10,6 +10,7 @@ void StmpCheck::service(HttpRequest &request, HttpResponse &response)
     if(request.getMethod()!="POST"){
         response.setStatus(405);
         response.write("method is error!",true);
+        return;
     }
     QJsonParseError jp;
     QByteArray s=request.getBody();

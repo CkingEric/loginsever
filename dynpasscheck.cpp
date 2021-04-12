@@ -17,6 +17,7 @@ void Dynpasscheck::service(HttpRequest &request, HttpResponse &response)
     if(request.getMethod()!="POST"){
         response.setStatus(405);
         response.write("method is error!",true);
+        return;
     }
     QJsonParseError jp;
     QByteArray s=request.getBody();
@@ -34,11 +35,13 @@ void Dynpasscheck::service(HttpRequest &request, HttpResponse &response)
     QString severcheckdyn1=QCryptographicHash::hash(hashinput.toLatin1(),QCryptographicHash::Md5).toHex();
     if(severcheckdyn1==dynpass){
         response.write("dynpass check success!",true);
+        return;
     }
     hashinput=timeString2.append(phoneuuid);
     QString severcheckdyn2=QCryptographicHash::hash(hashinput.toLatin1(),QCryptographicHash::Md5).toHex();
     if(severcheckdyn2==dynpass){
         response.write("dynpass check success!",true);
+        return;
     }
     response.setStatus(403);
     response.write("check failed!",true);

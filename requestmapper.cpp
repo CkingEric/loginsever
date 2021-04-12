@@ -28,6 +28,9 @@ void RequestMapper::service(HttpRequest &request, HttpResponse &response)
     else if(path=="/Dynpasscheck"){
         dynpasscheck.service(request,response);
     }
+    else if (path=="Phonebindcheck") {
+        bindcheck.service(request,response);
+    }
     else{
         response.setStatus(404);
         response.write("The URL is wrong, no such document.",true);

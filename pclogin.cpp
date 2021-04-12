@@ -10,6 +10,7 @@ void PcLogin::service(HttpRequest &request, HttpResponse &response)
     if(request.getMethod()!="POST"){
         response.setStatus(405);
         response.write("method is error!",true);
+        return;
     }
     QJsonParseError jp;
     QByteArray s=request.getBody();
@@ -17,6 +18,7 @@ void PcLogin::service(HttpRequest &request, HttpResponse &response)
     if(jp.error != QJsonParseError::NoError)
     {
           qDebug() << "json init error!";
+          return;
     }
     SingletonData* database=SingletonData::instance();
     QJsonObject obj=JD.object();
@@ -34,6 +36,7 @@ void PcLogin::service(HttpRequest &request, HttpResponse &response)
             QJsonDocument resJD(resobj);
             QByteArray resbyte=resJD.toJson();
             response.write(resbyte,true);
+            return;
         }
     }
     response.setStatus(403);
